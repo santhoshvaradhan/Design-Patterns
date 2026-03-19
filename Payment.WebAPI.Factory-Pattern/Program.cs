@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<PaymentFactory>();
 builder.Services.AddKeyedScoped<IPayment, UPIPayment>("UPI");
 builder.Services.AddKeyedScoped<IPayment, CreditCardPayment>("CreditCard");
+builder.Services.AddKeyedScoped<IPayment, DebitCardPayment>("DebitCard");
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
