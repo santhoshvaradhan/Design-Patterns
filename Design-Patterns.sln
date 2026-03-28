@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payment.WebAPI.Factory-Patt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Food.Order.System-Builder.Pattern", "Food.Order.System-Builder.Pattern\Food.Order.System-Builder.Pattern.csproj", "{85378EAF-FC04-4C96-9A0C-984408A0ADA0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Creational.Patterns", "Creational.Patterns", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F32DFF45-9535-4B49-A03C-AE9431EE087F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{85378EAF-FC04-4C96-9A0C-984408A0ADA0} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3F77CFC5-C3BB-436E-8AC0-1329EB480DC7}
