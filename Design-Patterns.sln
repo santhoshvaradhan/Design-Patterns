@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Food.Order.System-Builder.P
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Creational.Patterns", "Creational.Patterns", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Request.Template-Prototype.Pattern", "API Request Template - Prototype.Pattern\API.Request.Template-Prototype.Pattern.csproj", "{19EDAF77-0C00-4941-9A43-3CB523309A95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{85378EAF-FC04-4C96-9A0C-984408A0ADA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85378EAF-FC04-4C96-9A0C-984408A0ADA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85378EAF-FC04-4C96-9A0C-984408A0ADA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19EDAF77-0C00-4941-9A43-3CB523309A95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19EDAF77-0C00-4941-9A43-3CB523309A95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19EDAF77-0C00-4941-9A43-3CB523309A95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19EDAF77-0C00-4941-9A43-3CB523309A95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +36,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F32DFF45-9535-4B49-A03C-AE9431EE087F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{85378EAF-FC04-4C96-9A0C-984408A0ADA0} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{19EDAF77-0C00-4941-9A43-3CB523309A95} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3F77CFC5-C3BB-436E-8AC0-1329EB480DC7}
