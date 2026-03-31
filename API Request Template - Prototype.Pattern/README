@@ -1,1 +1,117 @@
-Prototype Pattern
+﻿Prototype Pattern
+
+What is Prototype Pattern?
+
+The Prototype Pattern is a design pattern that allows us to create new objects by copying existing ones. 
+Instead of creating a new object from scratch, we can clone an existing object and modify it as needed. 
+This pattern is particularly useful when the process of creating a new object is expensive or complex.
+
+In the Prototype Pattern, we have a prototype object that serves as a template for creating new objects. 
+When we want to create a new object, we can clone the prototype and then modify the cloned object as necessary.
+
+In summary, the Prototype Pattern is a design pattern that allows us to create new objects by copying existing ones.
+
+
+Why Prototype Pattern?
+
+When:
+
+Object creation is expensive
+Need to create many similar objects
+Problem Without Prototype
+
+var order1 = new Order("Santhosh", "Pizza", "Coke", "IceCream", true, "Address", "Phone");
+
+
+Problems:
+
+Expensive to create
+Hard to maintain
+
+Solution With Prototype:
+
+var prototypeOrder = new Order("Prototype", "Pizza", "Coke", "IceCream", true, "Address", "Phone");
+var order1 = prototypeOrder.Clone();
+
+✔ Efficient
+✔ Easy to maintain
+When to Use
+
+Use Prototype when:
+
+Object creation is expensive
+Need to create many similar objects
+Need to avoid subclassing for object creation
+
+what is Object creation is expensive?
+
+Object creation is considered expensive when it involves a lot of resources, time, or complex processes.
+For example, if creating an object requires:
+- Loading data from a database
+- Performing complex calculations
+- Establishing network connections
+- Allocating a lot of memory
+In such cases, using the Prototype Pattern can help improve performance by allowing us to clone existing objects instead of creating new ones from scratch.
+
+In the context of the Prototype Pattern, we can define a prototype object that serves as a template for creating new objects. 
+When we want to create a new object, we can clone the prototype and then modify the cloned object as necessary.
+
+Need to avoid subclassing for object creation:
+
+In some cases, we may want to create new objects without having to define a new subclass for each type of object we want to create.
+
+For example, if we have a base class called "Order" and we want to create different types of orders (e.g., "PizzaOrder", "CokeOrder", etc.), 
+we would typically need to define a new subclass for each type of order.
+
+However, with the Prototype Pattern, we can avoid this by creating a prototype object that serves as a template for creating new objects.
+
+For example, we can create a prototype order object and then clone it to create new orders without needing to define new subclasses for each type of order.
+
+public class Order
+{
+	public string CustomerName { get; set; }
+	public List<string> Items { get; set; }
+	public bool IsDelivery { get; set; }
+	public string DeliveryAddress { get; set; }
+	public string Phone { get; set; }
+	public Order(string customerName, List<string> items, bool isDelivery, string deliveryAddress, string phone)
+	{
+		CustomerName = customerName;
+		Items = items;
+		IsDelivery = isDelivery;
+		DeliveryAddress = deliveryAddress;
+		Phone = phone;
+	}
+	public Order Clone()
+	{
+		return new Order(CustomerName, new List<string>(Items), IsDelivery, DeliveryAddress, Phone);
+	}
+}
+
+Difference between Builder and Prototype and Factory:
+
+Builder Pattern:
+- Focuses on constructing complex objects step-by-step : Builder allows us to create complex objects with many optional fields by building them gradually
+- Uses a Director to manage the construction process : Director controls the construction process and ensures that the steps are executed in the correct order
+- Allows for different representations of an object using the same construction process : Builder can be implemented in different ways to create different representations of the object
+
+
+Prototype Pattern:
+- Focuses on creating new objects by copying existing ones
+- Uses a prototype object as a template for creating new objects
+- Avoids the need for subclassing for object creation
+
+Factory Pattern:
+- Focuses on creating objects without exposing the creation logic : Factory allows us to create objects without specifying the exact class
+- Uses Factory Method or Abstract Factory to create objects : Factory Method defines an interface for creating an object, but lets subclasses decide which class to instantiate. Abstract Factory provides an interface for creating families of related or dependent objects without specifying their concrete classes.
+- Allows for creating objects without specifying the exact class 
+
+
+
+Differences between Factory, Builder, and Prototype Patterns:
+
+| Pattern   | Purpose                                      | Key Concept                          | Use Case                                      |
+|-----------|----------------------------------------------|--------------------------------------|-----------------------------------------------|
+| Factory   | Creates objects without exposing the creation logic | Factory Method or Abstract Factory | When you want to create objects without specifying the exact class |
+| Builder   | Constructs complex objects step-by-step       | Director and Builder                 | When you want to create complex objects with many optional fields |
+| Prototype | Creates new objects by copying existing ones | Prototype object                     | When object creation is expensive or you want to avoid subclassing for object creation |
