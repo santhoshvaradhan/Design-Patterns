@@ -1,0 +1,81 @@
+﻿
+What is Simple Factory Pattern?
+
+The Simple Factory Pattern is a design pattern that provides a static method to create objects without exposing the instantiation logic to the client. 
+It is a simplified version of the Factory Pattern, where a single factory class is responsible for creating objects based on some input parameters.
+
+In the Simple Factory Pattern, we have a Factory class that contains a static method that takes some input parameters and returns an instance of a specific type of object based on those parameters.
+
+The Simple Factory Pattern is useful when we want to create objects without exposing the creation logic to the client, and when we have a limited number of object types that can be created.
+
+In summary, the Simple Factory Pattern is a design pattern that provides a static method to create objects without exposing the instantiation logic to the client. 
+It is a simplified version of the Factory Pattern, where a single factory class is responsible for creating objects based on some input parameters.
+
+Simple Factory Idea
+
+One class → decides which object to create using if/else, switch, or any other logic.
+
+When to Use Simple Factory?
+Use Simple Factory when:
+Need to create objects without exposing creation logic
+Have a limited number of object types that can be created
+
+
+Simple Factory
+
+👉 One kitchen decides:
+
+“Burger or Pizza?”
+
+WHY Simple Factory :
+✔ Decoupled : 
+The client code is decoupled from the specific classes that are being instantiated. 
+The client code only interacts with the factory class, which is responsible for creating the objects. 
+This allows us to change the implementation of the factory class without affecting the client code.
+
+without simple factory, the client code would be directly dependent on the concrete classes (e.g., BurgerOrder, PizzaOrder).
+example client code without simple factory:
+var burgerOrder = new BurgerOrder("Santhosh", "Cheese", "Medium");
+
+full client code without simple factory:
+
+✔ Flexible : With the Simple Factory Pattern, we can easily add new types of objects without modifying the client code.
+
+example client code with simple factory:
+
+var orderFactory = new OrderFactory();
+var burgerOrder = orderFactory.Create("Burger", "Santhosh", "Cheese", "Medium");
+
+full client code with simple factory:
+var orderFactory = new OrderFactory();
+var burgerOrder = orderFactory.Create("Burger", "Santhosh", "Cheese", "Medium");
+var pizzaOrder = orderFactory.Create("Pizza", "Santhosh", "Pepperoni", "Large");
+When we want to add a new type of order (e.g., SaladOrder), we can simply add a new case to the factory method without modifying the client code.
+
+
+EXAMPLE:
+// Factory Interface
+public interface IOrderFactory
+{
+	IOrder Create(string orderType, string customerName, string item, string size);
+}
+
+// Concrete Factory
+
+public class OrderFactory : IOrderFactory
+{
+	public IOrder Create(string orderType, string customerName, string item, string size)
+	{
+		switch (orderType)
+		{
+			case "Burger":
+				return new BurgerOrder(customerName, item, size);
+			case "Pizza":
+				return new PizzaOrder(customerName, item, size);
+			default:
+				throw new ArgumentException("Invalid order type");
+		}
+	}
+}
+
+
