@@ -1,13 +1,15 @@
-﻿
-
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>Customer.Ordering.Food.Factory_method</RootNamespace>
+    <RootNamespace>Customer.Ordering.Food.Abstract_Factory</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="README" />
+  </ItemGroup>
 
 </Project>
